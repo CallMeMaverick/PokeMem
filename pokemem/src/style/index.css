@@ -60,6 +60,7 @@
     justify-content: space-between;
     align-content: center;
     flex-wrap: wrap;
+    margin-top: 40px;
 }
 
 .card {
@@ -82,3 +83,27 @@
 }
 
 
+.score-board {
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 25px;
+    font-family: "Bungee Spice", sans-serif;
+}
+
+.score-board > p {
+    margin: 5px;
+}
+
+.hr-tag > hr {
+    width: 50%;
+    border-color: orange;
+}
+
+.hr-tag {
+    display: flex;
+    justify-content: center;
+}

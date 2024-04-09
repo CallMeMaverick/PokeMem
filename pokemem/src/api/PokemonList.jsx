@@ -22,8 +22,6 @@ function PokemonList() {
             setScore(score => score + 1);
             setClickedPokemons(prevState => [...prevState, pokemonId]);
         }
-
-        console.log(clickedPokemons);
     }
 
 
@@ -85,6 +83,10 @@ function PokemonList() {
             <div className={"score-board"}>
                 <p>Current score: {score}</p>
                 <p>Best result: {}</p>
+            </div>
+
+            <div className={"hr-tag"}>
+                <hr />
             </div>
 
             <div className={"pokemons"}>
