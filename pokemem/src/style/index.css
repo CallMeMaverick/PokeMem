@@ -68,15 +68,17 @@
     justify-content: center;
     align-items: center;
 
-    width: 200px;
-    height: 200px;
+    width: 210px;
+    height: 210px;
     margin: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    font-family: "Bungee Spice", "Rubik", sans-serif;
 }
 
 .card:hover {
     box-shadow: 0 0 10px rgb(245, 118, 74);
-
 }
+
 
