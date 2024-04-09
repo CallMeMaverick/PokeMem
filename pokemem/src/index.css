@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+
+/* Main header font */
+.bungee-spice-regular {
+    font-family: "Bungee Spice", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Fallback */
+.rubik {
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header {
+    font-family: "Bungee Spice", "Rubik", sans-serif;
+    font-size: 20px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header > h1 {
+    padding-top: 10px;
+    margin-bottom: 20px;
+}
+
+.header > p {
+    padding-bottom: 20px;
+}
