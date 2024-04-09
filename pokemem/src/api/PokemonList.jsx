@@ -10,11 +10,31 @@ function PokemonList() {
     // State for handling error cases
     const [error, setError] = useState(null);
 
+    const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0)
+    const [clickedPokemons, setClickedPokemons] = useState([]);
 
-    const triggerShuffle = () => {
-        const shuffled = [...pokemons];
-        shuffleArray(shuffled);
-        setPokemons(shuffled);
+
+    const handleClickedCard = (pokemonId) => {
+        if (clickedPokemons.includes(pokemonId)) {
+            if (score > bestScore) {
+                setBestScore(score);
+            }
+
+            setScore(score => score - score);
+            setClickedPokemons([]);
+        } else {
+            setScore(score => score + 1);
+            setClickedPokemons(prevState => [...prevState, pokemonId]);
+        }
+    }
+
+
+    const triggerShuffle = (pokemonId) => {
+        shuffleArray(pokemons);
+        setPokemons([...pokemons]);
+
+        handleClickedCard(pokemonId);
     }
 
 
@@ -64,14 +84,26 @@ function PokemonList() {
     }
 
     return (
-        <div className={"pokemons"}>
-            {pokemons.map(pokemon => (
-                <div className={"card"} key={pokemon.id} onClick={triggerShuffle}>
-                    <img src={pokemon.imgSrc} width={"150px"} height={"150px"} alt={pokemon.name} />
-                    <h3>{pokemon.name}</h3>
-                </div>
-            ))}
+        <div className={"wrapper"}>
+            <div className={"score-board"}>
+                <p>Current score: {score}</p>
+                <p>Best result: {bestScore}</p>
+            </div>
+
+            <div className={"hr-tag"}>
+                <hr />
+            </div>
+
+            <div className={"pokemons"}>
+                {pokemons.map(pokemon => (
+                    <div className={"card"} key={pokemon.id} onClick={() => triggerShuffle(pokemon.id)}>
+                        <img src={pokemon.imgSrc} width={"150px"} height={"150px"} alt={pokemon.name}/>
+                        <h3>{pokemon.name}</h3>
+                    </div>
+                ))}
+            </div>
         </div>
+
     )
 }
 
