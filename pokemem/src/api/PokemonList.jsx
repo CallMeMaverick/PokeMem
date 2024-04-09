@@ -11,11 +11,16 @@ function PokemonList() {
     const [error, setError] = useState(null);
 
     const [score, setScore] = useState(0);
+    const [bestScore, setBestScore] = useState(0)
     const [clickedPokemons, setClickedPokemons] = useState([]);
 
 
     const handleClickedCard = (pokemonId) => {
         if (clickedPokemons.includes(pokemonId)) {
+            if (score > bestScore) {
+                setBestScore(score);
+            }
+
             setScore(score => score - score);
             setClickedPokemons([]);
         } else {
@@ -82,7 +87,7 @@ function PokemonList() {
         <div className={"wrapper"}>
             <div className={"score-board"}>
                 <p>Current score: {score}</p>
-                <p>Best result: {}</p>
+                <p>Best result: {bestScore}</p>
             </div>
 
             <div className={"hr-tag"}>
