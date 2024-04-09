@@ -39,3 +39,17 @@
 .header > p {
     padding-bottom: 20px;
 }
+
+.fetching-loading, .fetching-error {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: "Bungee Spice", "Rubik", sans-serif;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.fetching-error {
+    font-family: "Rubik", sans-serif;
+    color: red;
+}
