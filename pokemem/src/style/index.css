@@ -107,3 +107,10 @@
     display: flex;
     justify-content: center;
 }
+
+@media screen and (max-width: 767px) {
+    .pokemons {
+        display: flex;
+        justify-content: center;
+    }
+}
