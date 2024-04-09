@@ -39,3 +39,46 @@
 .header > p {
     padding-bottom: 20px;
 }
+
+.fetching-loading, .fetching-error {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    font-family: "Bungee Spice", "Rubik", sans-serif;
+    padding: 20px;
+    font-size: 30px;
+}
+
+.fetching-error {
+    font-family: "Rubik", sans-serif;
+    color: red;
+}
+
+.pokemons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 210px;
+    height: 210px;
+    margin: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    font-family: "Bungee Spice", "Rubik", sans-serif;
+}
+
+.card:hover {
+    box-shadow: 0 0 10px rgb(245, 118, 74);
+}
+
+
