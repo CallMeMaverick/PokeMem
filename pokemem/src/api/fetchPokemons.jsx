@@ -54,14 +54,16 @@ function PokemonList() {
     }
 
     return (
-        <div className={"fetched-data"}>
-            <ul>
-                {pokemons.map((pokemon) => (
-                    <li className={"card"} key={pokemon.id}>{pokemon.name}</li>
-                ))}
-            </ul>
+        <div className={"pokemons"}>
+            {pokemons.map(pokemon => (
+                <div className={"card"} key={pokemon.id}>
+                    <img src={pokemon.imgSrc} width={"150px"} height={"150px"} alt={pokemon.name} />
+                    <h3>{pokemon.name}</h3>
+                </div>
+            ))}
         </div>
     )
 }
+
 
 export default PokemonList;
