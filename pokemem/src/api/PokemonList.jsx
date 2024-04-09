@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import shuffleArray from "../utils/shuffleArray.js";
+
 
 function PokemonList() {
     // State for pokemons to further work with
@@ -7,6 +9,14 @@ function PokemonList() {
     const [isLoading, setIsLoading] = useState(true);
     // State for handling error cases
     const [error, setError] = useState(null);
+
+
+    const triggerShuffle = () => {
+        const shuffled = [...pokemons];
+        shuffleArray(shuffled);
+        setPokemons(shuffled);
+    }
+
 
     useEffect(() => {
         async function fetchPokemons() {
@@ -56,7 +66,7 @@ function PokemonList() {
     return (
         <div className={"pokemons"}>
             {pokemons.map(pokemon => (
-                <div className={"card"} key={pokemon.id}>
+                <div className={"card"} key={pokemon.id} onClick={triggerShuffle}>
                     <img src={pokemon.imgSrc} width={"150px"} height={"150px"} alt={pokemon.name} />
                     <h3>{pokemon.name}</h3>
                 </div>
