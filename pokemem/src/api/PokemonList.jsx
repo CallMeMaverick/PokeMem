@@ -11,7 +11,10 @@ function PokemonList() {
     const [error, setError] = useState(null);
 
     const [score, setScore] = useState(0);
-    const [bestScore, setBestScore] = useState(0)
+    const [bestScore, setBestScore] = useState(() => {
+        const savedScore = localStorage.getItem('bestscore');
+        return savedScore !== null ? parseInt(savedScore, 10) : 0;
+    })
     const [clickedPokemons, setClickedPokemons] = useState([]);
 
 
@@ -29,7 +32,6 @@ function PokemonList() {
         }
     }
 
-
     const triggerShuffle = (pokemonId) => {
         shuffleArray(pokemons);
         setPokemons([...pokemons]);
@@ -37,6 +39,9 @@ function PokemonList() {
         handleClickedCard(pokemonId);
     }
 
+    useEffect(() => {
+        localStorage.setItem('bestscore', bestScore);
+    }, [bestScore]);
 
     useEffect(() => {
         async function fetchPokemons() {
@@ -103,7 +108,6 @@ function PokemonList() {
                 ))}
             </div>
         </div>
-
     )
 }
 
